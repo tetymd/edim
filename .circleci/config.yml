@@ -7,6 +7,10 @@ jobs:
     - checkout
     - run:
         command: |
+          sudo pip install codecov
+        name: Install codecov
+    - run:
+        command: |
           sudo pip install pipenv
           pipenv install
         name: Install pipenv
@@ -14,6 +18,10 @@ jobs:
         command: |
           pipenv run python edim.py
         name: Execute test
+    - run:
+        command: |
+          codecov -t $CODECOV_TOKEN
+        name: Send report
 workflows:
   Test Workflow:
     jobs:
