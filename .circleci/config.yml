@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+    - checkout
+    - run:
+        command: |
+          sudo pip install pipenv
+          pipenv install
+        name: Install pipenv
+    - run:
+        command: |
+          pipenv run python edim.py
+        name: Execute test
+workflows:
+  Test Workflow:
+    jobs:
+    - test
+  version: 2
