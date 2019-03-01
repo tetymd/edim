@@ -8,6 +8,8 @@ numpy = "*"
 pillow = "*"
 fire = "*"
 pyinstaller = "*"
+codecov = "*"
+coverage = "*"
 
 [dev-packages]
 
