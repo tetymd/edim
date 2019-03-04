@@ -12,17 +12,13 @@ jobs:
         name: Install pipenv
     - run:
         command: |
-          pipenv run python edim.py
-        name: Execute test
+          pipenv run coverage run test_edim.py
+          pipenv run codecov -t $CODECOV_TOKEN
+        name: Create & send report
     - run:
         command: |
           pipenv run pyinstaller edim.py --onefile
         name: Build binary
-    - run:
-        command: |
-          pipenv run coverage run edim.py
-          pipenv run codecov -t $CODECOV_TOKEN
-        name: Create & send report
 workflows:
   Test Workflow:
     jobs:
