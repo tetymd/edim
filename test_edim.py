@@ -4,7 +4,7 @@ from edim import *
 class TestEdim(unittest.TestCase):
     def test_color(self):
         newColor = "red"
-        path = "./mattermost.png"
+        path = "./test_image/lena.png"
 
         color(newColor, path)
 
