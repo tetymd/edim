@@ -20,8 +20,9 @@ jobs:
         name: Build binary
     - run:
         command: |
+          pipenv run coverage run edim.py
           pipenv run codecov -t $CODECOV_TOKEN
-        name: Send report
+        name: Create & send report
 workflows:
   Test Workflow:
     jobs:
