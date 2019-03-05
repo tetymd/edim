@@ -1,0 +1,21 @@
+name: edim
+version: git
+summary: edim is a simple image editing tool.
+description: |
+  edim is a simple image editing tool.
+confinement: devmode
+base: core18
+
+parts:
+  edim:
+    plugin: python
+    python-version: python3
+    source: .
+    python-packages:
+      - numpy
+      - pillow
+      - fire
+
+apps:
+  edim:
+    command: edim.py
