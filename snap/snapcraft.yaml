@@ -18,4 +18,4 @@ parts:
 
 apps:
   edim:
-    command: edim.py
+    command: bin/edim
